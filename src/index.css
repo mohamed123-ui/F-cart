@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components{
+    .row{
+        @apply flex flex-wrap
+    }
+    .product .btn{
+        transition: 1s;
+        transform: translatey(100%);
+        opacity: 0; 
+    }
+    .product:hover .btn {
+        transform: translatey(0%);
+        opacity: 1;
+    }
+    .product .star{
+        transition: 1s;
+        transform: translatey(100%);
+        opacity: 0; 
+    }
+    .product:hover .star {
+        transform: translatey(0%);
+        opacity: 1;
+    }
+    .btn{
+        @apply text-white bg-green-600 hover:bg-green-700 cursor-pointer rounded-lg  w-full text-center 
+    }
+  
+}
+.slick-prev::before, .slick-next::before{
+   color: green !important;
+   padding: 5px;
+}
