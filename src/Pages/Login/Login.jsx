@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { tokenContext } from "../../Components/context/TokenContext";
 import { NavLink } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
+import { Helmet } from "react-helmet";
 
 export default function Login() {
   const initialValues = {
@@ -50,12 +51,30 @@ export default function Login() {
 
   return (
     <div>
- <section className="bg--50 py-10 my-9 px-6 min-h-full dark:bg-gray-900 w-1/2 mx-auto shadow-lg">
+       <Helmet>
+        <title>Login </title>
+        <meta
+          name="description"
+          content="Log in to you account to view your orders, cart, and personal settings."
+        />
+        <meta
+          name="keywords"
+          content="login, sign in, ecommerce login, user login"
+        />
+        <meta property="og:title" content="Login to Your Account" />
+        <meta
+          property="og:description"
+          content="Access your personal dashboard and continue shopping o."
+        />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+
+ <section className="bg-gray-50 w-full py-10 my-9 px-6 min-h-full dark:bg-gray-900 lg:w-1/2 mx-auto shadow-lg">
       <h1 className="text-xl text-center font-bold">Login Now</h1>
       <form className="relative" onSubmit={formik.handleSubmit}>
         {errMsg && <div className="text-red-600 bg-red-200 py-2 rounded text-center">{errMsg}</div>}
 
-        <div>
+        <div className="w-full">
           <label htmlFor="email" className="block mb-2 text-xm font-medium text-gray-900 dark:text-white">Email:</label>
           <input
             onChange={formik.handleChange}

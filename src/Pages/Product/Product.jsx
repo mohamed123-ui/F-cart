@@ -5,6 +5,7 @@ import { FaStar } from 'react-icons/fa6';
 import { CartContext } from '../../Components/context/CartContext';
 import { toast } from 'react-toastify';
 import Footer from '../../Components/Footer/Footer';
+import { Helmet } from 'react-helmet';
 export default function Product() {
  const{addCart}= useContext(CartContext)
   async function AddProductToCart(id) {
@@ -49,6 +50,23 @@ export default function Product() {
   
   return (
     <div>
+   <Helmet>
+        <meta
+          name="description"
+          content={products.description}
+        />
+        <title>AllProduct</title>
+        <meta
+          name="keywords"
+          content={`${products.title}, product products, ecommerce product`}
+        />
+        <meta property="og:title" content={products.title} />
+        <meta
+          property="og:description"
+          content={products.description}
+        />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
 
       <div className='row '>
       {products.length>0? products.map((Product)=>(

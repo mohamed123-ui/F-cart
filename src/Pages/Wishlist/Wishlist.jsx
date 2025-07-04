@@ -6,6 +6,7 @@ import { CartContext } from '../../Components/context/CartContext';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 import Footer from '../../Components/Footer/Footer';
+import { Helmet } from 'react-helmet';
 export default function Wishlist(AddProductToCart) {
   
 const{getLogedWislist,deleteWishList} =useContext(WishlistContext)
@@ -66,12 +67,30 @@ useEffect(() => {
 
   return (
     <div>
-      
-<div className="relative overflow-x-auto py-8 my-5">
-  <h2 className='py-5 text-2xl font-thin flex justify-center items-center gap-2 '> My WishList <FaHeart /></h2>
-  <table className="sm:w-[50%] md:w-full  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+         <Helmet>
+       <meta
+          name="description"
+          content={products.description}
+        />
+        <title>wishlist </title>
 
-    <thead className="w-full text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <meta
+          name="keywords"
+          content={`${products.title}, product details, ecommerce product`}
+        />
+        <meta property="og:title" content={products.title} />
+        <meta
+          property="og:description"
+          content={products.description}
+        />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+
+<div className="relative overflow-x-auto py-8 w-full my-5">
+  <h2 className='py-5 text-2xl font-thin flex justify-center items-center gap-2 '> My WishList <FaHeart /></h2>
+  <table className=" w-full   text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+
+    <thead className="w-full  text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
       <th scope="col" className="px-6 py-3">
           Product Imge
@@ -135,7 +154,7 @@ useEffect(() => {
     </tbody>
   
   </table>
-  <button  onClick={()=>{navigate("/checkout")}} className="btn w-full p-3 text-xl" >CheckOut</button>
+  <button  onClick={()=>{navigate("/checkout")}} className="btn w-full  p-3 text-xl" >CheckOut</button>
 
 </div>
   <Footer />

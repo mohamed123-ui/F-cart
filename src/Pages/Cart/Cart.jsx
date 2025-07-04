@@ -4,6 +4,7 @@ import { FaStar } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 import Footer from "../../Components/Footer/Footer";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 export default function Cart() {
   const { getCart } = useContext(CartContext);
@@ -57,6 +58,27 @@ try {
   return (
     
     <div className=" sm:p-9 lg:py-5 lg:px-5  w-full">
+    {cartdata && (
+  <Helmet>
+    <title>{cartdata.title || "Cart Page"} </title>
+
+    <meta
+      name="description"
+      content={cartdata.description || "Your shopping cart page."}
+    />
+    <meta
+      name="keywords"
+      content={`${cartdata.title || "Cart"}, product cart, ecommerce product`}
+    />
+    <meta property="og:title" content={cartdata.title || "Cart"} />
+    <meta
+      property="og:description"
+      content={cartdata.description || "Items in your shopping cart."}
+    />
+    <meta name="robots" content="noindex, nofollow" />
+  </Helmet>
+)}
+
       <div className="relative w-full overflow-x-auto container shadow-md sm:rounded-lg py-7">
         <h2 className="text-xl font-bold mb-4">My Cart</h2>
 

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import style from "./Categories.module.css"; 
 import Footer from "../../Components/Footer/Footer";
+import { Helmet } from "react-helmet";
 
 export default function Categories() {
   const [data, setData] = useState([]); 
@@ -29,6 +30,10 @@ export default function Categories() {
 
   return (
     <div className="my-6 py-5">
+   <Helmet>
+        <title>Categories</title>
+      
+      </Helmet>
 
       {loading && <p className="text-center text-gray-500">Loading categories...</p>}
 

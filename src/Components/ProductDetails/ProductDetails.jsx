@@ -8,6 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Loader from '../Loader/Loader';
 import { toast } from 'react-toastify';
+import { Helmet } from 'react-helmet';
 
 export default function ProductDetails() {
   const settings = {
@@ -60,7 +61,25 @@ export default function ProductDetails() {
 
   return (
     <div className='row my-16 min-h-[300px]'>
-      <div className=' sm:w-full  md:w-1/4 '>
+       <Helmet>
+        <meta
+          name="description"
+          content={details.description}
+        />
+        <title>{details.title}</title>
+        <meta
+          name="keywords"
+          content={`${details.title}, product details, ecommerce product`}
+        />
+        <meta property="og:title" content={details.title} />
+        <meta
+          property="og:description"
+          content={details.description}
+        />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+
+      <div className=' w-full  md:w-1/4 '>
         {details.images?.length > 0 ? (
           <Slider {...settings}>
             {details.images.map((img, i) => (

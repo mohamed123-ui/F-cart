@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import axios from "axios";
 import { useState } from "react";
 import Footer from "../../Components/Footer/Footer";
+import { Helmet } from "react-helmet";
 export default function Register() {
   const initialValues = {
     name: "",
@@ -85,7 +86,25 @@ const validationSchema=Yup.object({
   });
   return (
   <div>
-      <section className="bg--50 py-5 dark:bg-gray-900 w-1/2 mx-auto">
+     <Helmet>
+        <title>Register Now </title>
+        <meta
+          name="description"
+          content="Log in to you account to view your orders, cart, and personal settings."
+        />
+        <meta
+          name="keywords"
+          content="Register Now, sign in, ecommerce Register Now, user Register Now"
+        />
+        <meta property="og:title" content="Register Now to Your Account" />
+        <meta
+          property="og:description"
+          content="Access your personal dashboard and continue shopping o."
+        />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
+
+      <section className="bg-gray-50 w-full py-5 dark:bg-gray-900 lg:w-1/2 mx-auto">
       <h1 className="text-xl text-center font-semibold"> Register Now </h1>
       <form className="relative shadow-xl p-6" onSubmit={formik.handleSubmit}>
         <div>

@@ -5,6 +5,7 @@ import Footer from '../Footer/Footer'
 export default function Mainlayout() {
   return (
    <>
+  
    <Navbar />
   <div className='container mx-auto'> <Outlet/></div>
    </>

@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Footer from '../../Components/Footer/Footer';
+import { Helmet } from 'react-helmet';
 
 export default function Brands() {
     const [items, setItems] = useState([])
@@ -21,6 +22,11 @@ export default function Brands() {
     
     return (
  <div className='container my-5 py-5 '>
+      <Helmet>
+        <title>Brandsd </title>
+      
+      </Helmet>
+
     <div className="row">
         {items.length>0?items.map((item)=>(
 <div className=' w-full p-4 md:w-1/2 lg:w-1/4 rounded-lg  shadow-lg '>
