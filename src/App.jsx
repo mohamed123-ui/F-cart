@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Mainlayout from "./Components/Mainlayout/Mainlayout";
 import Home from "./Pages/Home/Home";
-import Product from "./Pages/Product/Product.jsX";
+import Product from "./Pages/Product/Product.jsx";
 import TokenContextProvider from "./Components/context/TokenContext";
-import Cart from "./Pages/Cart/Cart.jsX";
-import Categories from "./Pages/Categories/Categories.jsX";
+import Cart from "./Pages/Cart/Cart.jsx";
+import Categories from "./Pages/Categories/Categories.jsx";
 import ProtecetedRouts from "./Components/ProtecetedRout/ProtecetedRout";
 import ProductDetails from "./Components/ProductDetails/ProductDetails";
 import CartContextProvider from "./Components/context/CartContext";
@@ -106,9 +106,7 @@ export default function App() {
         },
         {
           path: "forgotpassword",
-          element: (
-              <ForgotPassword />
-          ),
+          element: <ForgotPassword />,
         },
       ],
     },
@@ -116,13 +114,11 @@ export default function App() {
   return (
     <TokenContextProvider>
       <CartContextProvider>
-      <WishlistContextProvider>
+        <WishlistContextProvider>
           <RouterProvider router={routes} />
-        <ToastContainer />
-      </WishlistContextProvider>
-
+          <ToastContainer />
+        </WishlistContextProvider>
       </CartContextProvider>
-     
     </TokenContextProvider>
   );
 }
