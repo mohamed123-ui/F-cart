@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Mainlayout from "./Components/Mainlayout/Mainlayout";
 import Home from "./Pages/Home/Home";
-import Register from "./Pages/Register/Register.jsX";
 import Product from "./Pages/Product/Product.jsX";
 import TokenContextProvider from "./Components/context/TokenContext";
 import Cart from "./Pages/Cart/Cart.jsX";
@@ -17,7 +16,7 @@ import WishlistContextProvider from "./Components/context/WishlistContext";
 import Wishlist from "./Pages/Wishlist/Wishlist";
 import Brands from "./Pages/Brands/Brands";
 import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
-
+import Register from "./Pages/Register/Register.jsx";
 export default function App() {
   const routes = createBrowserRouter([
     {
